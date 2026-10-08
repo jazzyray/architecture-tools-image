@@ -1,0 +1,5 @@
+{
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8033",
+    "ANTHROPIC_AUTH_TOKEN": "llama.cpp",
+    "model": "gemma-41-2B"
+}

@@ -1,0 +1,27 @@
+{
+	"name": "MkDocs",
+	"image": "jazzyray.architecture.arch-as-code:0.0.1",
+	"forwardPorts": [8000, 9001, "9088:8080"],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jebbs.plantuml",
+				"yzhang.markdown-all-in-one",
+				"DavidAnson.vscode-markdownlint",
+				"shd101wyy.markdown-preview-enhanced",
+				"darkriszty.markdown-table-prettify",
+				"marvhen.reflow-markdown",
+				"ms-dotnettools.vscode-dotnet-pack",
+				"ciarant.vscode-structurizr",
+				"ms-dotnettools.csdevkit",
+				"ms-azuretools.vscode-bicep"
+			],
+			"settings": {
+				"markdown-preview-enhanced.plantumlJarPath": "/opt/plantuml/plantuml.jar"
+			}
+		}	
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/powershell:latest": {}
+	}
+}
