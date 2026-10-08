@@ -1,0 +1,41 @@
+name: build-push-arch-tools-image
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        default: "0.0.1"
+        description: "Semantic version for the Docker image"
+
+env:
+  REGISTRY: ghcr.io
+  GITHUB_REPO: architecture-tools-image
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./devcontainers/arch-as-code/.devcontainer
+          file: ./devcontainers/arch-as-code/.devcontainer/Dockerfile
+          push: true
+          tags:
+            ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.GITHUB_REPO }}/jazzyray.architecture.arch-as-code:latest
+          platforms: linux/amd64
