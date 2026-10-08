@@ -1,7 +1,7 @@
 # checkov:skip=CKV_DOCKER_2: Ensure that HEALTHCHECK instructions have been added to container images
 # checkov:skip=CKV_DOCKER_3: Ensure that a user for the container has been created
 # checkov:skip=CKV2_DOCKER_1: sudo
-FROM mcr.microsoft.com/devcontainers/python:3.13-bookworm
+FROM mcr.microsoft.com/devcontainers/python:3.13-trixie
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -26,7 +26,7 @@ RUN apt-get update && \
     lmodern \
     imagemagick \
     librsvg2-bin \
-    openjdk-17-jdk \
+    openjdk-21-jdk \
     curl
     
 RUN pip3 install pipx    
@@ -60,7 +60,7 @@ RUN /bin/bash /tmp/library-scripts/install-plantuml.sh && \
 
 # Install Structurizr
 ARG STRUCTURIZR_INSTALL_DIR="/home/vscode/.local/bin/structurizr/"
-COPY ./scripts/install-structurizr-cli.sh /tmp/library-scripts/install-structurizr.sh
+COPY ./scripts/install-structurizr.sh /tmp/library-scripts/install-structurizr.sh
 RUN /bin/bash /tmp/library-scripts/install-structurizr.sh ${STRUCTURIZR_INSTALL_DIR} && \
     rm -rf /tmp/library-scripts/
 

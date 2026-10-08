@@ -13,7 +13,7 @@ docker login ghcr.io -u username -p accesstoken
 ```
 
 ```bash
-docker pull ghcr.io/randco.architecture.arch-as-code:latest
+docker pull ghcr.io/jazzyray.architecture.arch-as-code:latest
 ```
 
 ## Building and publishing the image to the Github container registery
