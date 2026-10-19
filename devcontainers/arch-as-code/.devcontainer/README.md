@@ -6,13 +6,11 @@ Tools include:
 [Copier](https://copier.readthedocs.io/en/stable/) for architecture documentation templates
 [Structurizr](https://structurizr.com/) for architecture modelling and diagrams
 [Plantuml](https://plantuml.com/) for UML diagrams
-[Powershel](./scripts/install-powershell.sh)
-[AZ Cli](./scripts/install-az-cli.sh)
 
 ## Building
 
 ```bash
-docker build . -t randco.architecture.arch-as-code:0.0.1
+docker build . -t jazzyray.architecture.arch-as-code:0.0.1
 ```
 
 ## Pulling the image
@@ -29,7 +27,7 @@ docker build . -t randco.architecture.arch-as-code:0.0.1
 @TODO
 
 ```bash
-docker pull randco-arch-acr.azurecr.io/graphwise.architecture.arch-as-code:0.0.1
+docker pull ghcr.io/jazzyray/architecture-tools-image/jazzyray.architecture.arch-as-code:latest
 ```
 
 ## Using the image
