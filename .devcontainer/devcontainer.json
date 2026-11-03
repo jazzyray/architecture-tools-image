@@ -11,7 +11,10 @@
 				"darkriszty.markdown-table-prettify",
 				"marvhen.reflow-markdown",
 				"ciarant.vscode-structurizr",
-				"anthropic.claude-code"
+				"anthropic.claude-code",
+				"ms-python.python",
+				"ms-python.flake8",
+				"vscode-pull-request-github"
 			],
 			"settings": {
 				"markdown-preview-enhanced.plantumlJarPath": "/opt/plantuml/plantuml.jar",
