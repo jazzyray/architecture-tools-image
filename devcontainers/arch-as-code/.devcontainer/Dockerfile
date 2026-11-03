@@ -28,8 +28,13 @@ RUN apt-get update && \
     librsvg2-bin \
     openjdk-21-jdk \
     curl
-    
-RUN pip3 install pipx    
+
+# Install UV package manager
+COPY ./scripts/install-uv.sh /tmp/library-scripts/install-uv.sh
+RUN /bin/bash /tmp/library-scripts/install-uv.sh && \
+    rm -rf /tmp/library-scripts/
+
+RUN pip3 install pipx
 
 # Install Python requirements, including mkdocs
 ENV TZ=UTC
